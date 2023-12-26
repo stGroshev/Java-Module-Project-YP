@@ -3,7 +3,7 @@ public class Product {
     Double costProduct;
 
     Product(String nameProduct, Double costProduct){
-        nameProduct = this.nameProduct;
-        costProduct = this.costProduct;
+        this.nameProduct = nameProduct;
+        this.costProduct = costProduct;
     }
 }
