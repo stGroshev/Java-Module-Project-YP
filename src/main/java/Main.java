@@ -7,7 +7,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int numberOfPerson;
-        int count = 0;
+        int countWhile = 0;
+        int countProduct = 0;
 
         System.out.println("Вас приветствует консольное приложение \"Побратски попилим счет, а?\".\n" +
                 "На скольких братюнь необходимо попилить ваш счёт?\nВведите числовое значение >1 ...");
@@ -30,29 +31,32 @@ public class Main {
                     Product product = new Product(nameProduct, costProduct);
                     calculate.addingProductsToCalculate(product);
                     calculate.sum(costProduct);
+                    countProduct++;
                     break;
                 }
                 case "завершить": {
-                    count++;
-                    System.out.println("Ввод позиций по счету успешно завершен.\nДобавленные позиции:");
+                    countWhile++;
+                    System.out.println("Ввод позиций по счету успешно завершен.\n" +
+                            "Количество добавленных позиций = " + countProduct +".\n\nДобавленные позиции:");
                     calculate.addingProductsToConsole();
                     break;
                 }
                 default:
                     System.out.println("Вы ввели некорректное значение, повторите попытку...");
-            }if (count == 1){
+            }if (countWhile == 1){
                 break;
             }
         }
 
         double division = calculate.division(calculate.sum, numberOfPerson);
         if (calculate.sum == 0){
-             System.out.println("Товары отсутвуют, пилить счет нет смысла. Завершение программы...");
-        }else System.out.println("\n" +
-                "Общая стоимость всех позиций счета = " + calculate.sum + "\n" +
-                "Количество человек, на которых необходимо попилить счет = " + numberOfPerson + "\n" +
-                "Каждый человек должен скинуться по - " + division);
-
+             System.out.println("\nПозицици счета не были добавлены, нечего пилить. Завершение программы, братиш ;)");
+        }else {
+            String outputText = String.format("\nОбщая стоимость всех позиций братского счета = %.2f\n" +
+                    "Количество человек, на которых необходимо попилить счет = %d\n" +
+                    "Каждый человек должен скинуться по - %.2f", calculate.sum, numberOfPerson, division);
+            System.out.println(outputText);
+        }
     }
     static int checkingUserInputString (){
         Scanner scanner = new Scanner(System.in);
@@ -69,7 +73,7 @@ public class Main {
                 System.out.println("Введите значение >1...");
                 number = checkingUserInputString();
             } else if (number > 1) {
-                System.out.println("Введено корректное значение количества человек!");
+                System.out.println("Введено корректное значение количества братюнь!");
                 break;
             } else if (number <= 0) {
                 System.out.println("Введено значение ноль или меньше нуля, повторите попытку...");
