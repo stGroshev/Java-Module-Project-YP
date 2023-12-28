@@ -9,8 +9,8 @@ public class Main {
         int numberOfPerson;
         int count = 0;
 
-        System.out.println("Вас приветствует программа \"Побратски попилить счет\".\n" +
-                "На скольких человек необходимо попилить ваш счёт, введите числовое значение >1 ...");
+        System.out.println("Вас приветствует консольное приложение \"Побратски попилим счет, а?\".\n" +
+                "На скольких братюнь необходимо попилить ваш счёт?\nВведите числовое значение >1 ...");
 
         numberOfPerson = checkingUserInputString();
         checkingUserInputOfTaskCondition(numberOfPerson);
