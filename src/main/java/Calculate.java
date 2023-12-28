@@ -15,7 +15,9 @@ public class Calculate {
 
     void addingProductsToConsole(){
         for (int i = 0; i < listProduct.size(); i++ ){
-            System.out.println((i + 1) +"-я позиция по счету: " + listProduct.get(i).nameProduct + " стоимость которой = " + listProduct.get(i).costProduct);
+            String text = String.format("%d-я позиция по счету: %s - стоимость которой = %.2f", i
+                    + 1, listProduct.get(i).nameProduct,listProduct.get(i).costProduct);
+            System.out.println(text);
         }
     }
 

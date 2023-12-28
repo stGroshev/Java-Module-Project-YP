@@ -53,7 +53,7 @@ public class Main {
              System.out.println("\nПозицици счета не были добавлены, нечего пилить. Завершение программы, братиш ;)");
         }else {
             String outputText = String.format("\nОбщая стоимость всех позиций братского счета = %.2f\n" +
-                    "Количество человек, на которых необходимо попилить счет = %d\n" +
+                    "Количество братюнь, на которых необходимо попилить счет = %d\n" +
                     "Каждый человек должен скинуться по - %.2f", calculate.sum, numberOfPerson, division);
             System.out.println(outputText);
         }
