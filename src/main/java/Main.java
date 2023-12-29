@@ -16,6 +16,7 @@ public class Main {
         numberOfPerson = checkingUserInputString();
         checkingUserInputOfTaskCondition(numberOfPerson);
         Calculate calculate = new Calculate();
+        Formatter formatter = new Formatter();
 
         while (true) {
             System.out.println("Вы хотите добавить позицию из счета? \n" +
@@ -52,9 +53,10 @@ public class Main {
         if (calculate.sum == 0){
              System.out.println("\nПозицици счета не были добавлены, нечего пилить. Завершение программы, братиш ;)");
         }else {
-            String outputText = String.format("\nОбщая стоимость всех позиций братского счета = %.2f\n" +
+            String outputText = String.format("\nОбщая стоимость всех позиций братского счета = %.2f %s\n" +
                     "Количество братюнь, на которых необходимо попилить счет = %d\n" +
-                    "Каждый человек должен скинуться по - %.2f", calculate.sum, numberOfPerson, division);
+                    "Каждый братюня должен скинуться по - %.2f %s", calculate.sum, formatter.formatter(calculate.sum),
+                    numberOfPerson, division, formatter.formatter(division));
             System.out.println(outputText);
         }
     }
@@ -73,7 +75,7 @@ public class Main {
                 System.out.println("Введите значение >1...");
                 number = checkingUserInputString();
             } else if (number > 1) {
-                System.out.println("Введено корректное значение количества братюнь!");
+                System.out.println("Введено корректное значение количества братюнь, молодец братиш ;)");
                 break;
             } else if (number <= 0) {
                 System.out.println("Введено значение ноль или меньше нуля, повторите попытку...");
@@ -97,7 +99,7 @@ public class Main {
                 System.out.println("Введено значение ноль или меньше нуля, повторите попытку...");
                 costProduct = checkingUserInputDouble();
             }else if (costProduct > 0){
-                System.out.println( "Введено корректное значение стоимости позиции из счета!");
+                System.out.println( "Введено корректное значение стоимости позиции из счета, молодец братиш ;)");
                 break;
             }
         }return costProduct;
