@@ -12,16 +12,16 @@ public class Formatter {
                     break;
                 }
                 case 1: {
-                    str = str(a, str);
+                    str = decimalConversion(a, str);
                     break;
                 }
                 case 2: {
-                    str = strTwo(a, str);
+                    str = hundredthsConverting(a, str);
                     break;
                 }
                 default:
-                    a = a % 10;
-                    str = strTwo(a, str);
+                    a = a % 100;
+                    str = hundredthsConverting(a, str);
                     break;
             }
             return str;
@@ -32,10 +32,10 @@ public class Formatter {
        return (int) Math.floor(value);
     }
 
-    String str (int a, String str){
+    String decimalConversion (int a, String str){
         if (a == 1) {
             str = "рубль";
-        } else if (a != 1 && a <= 4) {
+        } else if (a != 1 && a > 0 && a <= 4) {
             str = "рубля";
         } else if (a == 0 || a == 5 || a == 6 || a == 7 || a == 8 || a == 9) {
             str = "рублей";
@@ -43,13 +43,13 @@ public class Formatter {
         return str;
     }
 
-    String strTwo (int a, String str){
+    String hundredthsConverting (int a, String str){
         if (a == 11 || a == 12 || a == 13 || a == 14) {
             str = "рублей";
             return str;
         }
         a = a % 10;
-        str = str(a,str);
+        str = decimalConversion(a,str);
         return str;
     }
 }

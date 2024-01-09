@@ -1,4 +1,3 @@
-import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -55,7 +54,7 @@ public class Main {
         }else {
             String outputText = String.format("\nОбщая стоимость всех позиций братского счета = %.2f %s\n" +
                     "Количество братюнь, на которых необходимо попилить счет = %d\n" +
-                    "Каждый братюня должен скинуться по - %.2f %s", calculate.sum, formatter.formatter(calculate.sum),
+                    "Каждый братюня должен скинуть по - %.2f %s", calculate.sum, formatter.formatter(calculate.sum),
                     numberOfPerson, division, formatter.formatter(division));
             System.out.println(outputText);
         }
